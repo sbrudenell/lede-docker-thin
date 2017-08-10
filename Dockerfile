@@ -17,6 +17,7 @@ RUN /bin/opkg remove \
               dropbear \
               odhcpd odhcp6c \
               dnsmasq \
+              kmod-button-hotplug kmod-input-core \
               kmod-igb \
               kmod-r8169 r8169-firmware kmod-e1000e kmod-e1000 kmod-mii \
               ppp-mod-pppoe ppp kmod-pppoe kmod-pppox kmod-ppp \
@@ -38,7 +39,10 @@ RUN /bin/opkg remove \
               libiwinfo-lua libiwinfo \
               liblua \
               kmod-ptp kmod-pps \
-              kmod-slhc kmod-lib-crc-ccitt
+              kmod-slhc kmod-lib-crc-ccitt \
+              kmod-i2c-algo-bit kmod-i2c-core \
+              e2fsprogs partx-utils mkf2fs libblkid libext2fs libf2fs \
+              libsmartcols libuuid
 
 RUN rm -rf /etc/dnsmasq.conf \
            /etc/config/dhcp \
