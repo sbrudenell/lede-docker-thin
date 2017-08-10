@@ -1,11 +1,10 @@
-FROM openwrt-15.05.1-x86-64-initial
+FROM lede-17.01.2-x86-64-initial
 
 RUN mkdir /var/lock
 RUN mkdir /var/run
 
 RUN /etc/init.d/odhcpd disable
 RUN /etc/init.d/dropbear disable
-RUN /etc/init.d/telnet disable
 RUN /etc/init.d/dnsmasq disable
 RUN /etc/init.d/sysntpd disable
 
@@ -18,6 +17,7 @@ RUN /bin/opkg remove \
               dropbear \
               odhcpd odhcp6c \
               dnsmasq \
+              kmod-igb \
               kmod-r8169 r8169-firmware kmod-e1000e kmod-e1000 kmod-mii \
               ppp-mod-pppoe ppp kmod-pppoe kmod-pppox kmod-ppp \
               mtd \
@@ -25,6 +25,7 @@ RUN /bin/opkg remove \
               luci-mod-admin-full \
               luci-app-firewall \
               luci-base \
+              luci-lib-jsonc \
               luci-lib-nixio \
               luci-lib-ip \
               luci-theme-bootstrap \
