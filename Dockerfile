@@ -1,4 +1,4 @@
-FROM lede-17.01.2-x86-64-initial
+FROM lede-x86-64-initial
 
 RUN mkdir /var/lock
 RUN mkdir /var/run

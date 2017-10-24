@@ -7,7 +7,7 @@ complicated routing and firewalling that LEDE can do. I use this to build
 containers based on the `mwan3` package, which do routing for other containers.
 
 It starts with the official release of LEDE (from
-`lede-17.01.2-x86-64-generic-rootfs.tar.gz`) and removes all the packages that
+`lede-17.01.4-x86-64-generic-rootfs.tar.gz`) and removes all the packages that
 aren't very useful in a container.
 
 ## What's in the image
@@ -38,8 +38,8 @@ the container.
 This results in a very small container image.
 
 ```
-lede-thin                  17.01.2-x86-64      16e0a33e1737        4 hours ago
-3.67 MB
+lede-thin                              17.01.4-x86-64      9be52f540c89
+2 minutes ago       2.35 MB
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ To rebuild the image, run `./build.sh`.
 Use the image:
 
 ```
-docker run --tty --tmpfs /tmp --cap-add NET_ADMIN lede-thin:17.01.2-x86-64
+docker run --tty --tmpfs /tmp --cap-add NET_ADMIN lede-thin:17.01.4-x86-64
 ```
 
 Explanation of the parameters used:
